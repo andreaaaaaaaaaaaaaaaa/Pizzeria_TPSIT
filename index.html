@@ -7,40 +7,60 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header>
     <div class="logo">
-      🍕
+      <img src="logo.png" alt="Logo Pizzeria I Tre Pizzaioli">
+      <h1>Pizzeria I Tre Pizzaioli</h1>
     </div>
-    <h1>Pizzeria I Tre Pizzaioli</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="pizze.html">Pizze</a></li>
+        <li><a href="dolci.html">Dolci</a></li>
+        <li><a href="bevande.html">Bevande</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main class="menu-container">
-    <section>
-      <details>
-        <summary>🍕 Pizze</summary>
-        <div class="menu-content">
-          <p>Qui troverai le nostre pizze artigianali, cotte nel forno a legna.</p>
-        </div>
-      </details>
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Benvenuti alla Pizzeria I Tre Pizzaioli</h2>
+      <p>Tradizione, passione e ingredienti di qualità dal cuore dell’Italia direttamente sulla tua tavola.</p>
+      <a href="pizze.html" class="btn">Scopri il nostro menù</a>
+    </div>
+  </section>
 
-      <details>
-        <summary>🍰 Dolci</summary>
-        <div class="menu-content">
-          <p>I nostri dolci fatti in casa sono perfetti per chiudere in bellezza.</p>
-        </div>
-      </details>
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2>Chi Siamo</h2>
+      <p>Alla Pizzeria I Tre Pizzaioli, ogni pizza è un capolavoro creato con amore e ingredienti freschissimi.  
+      Dal nostro forno a legna sprigioniamo profumi autentici che raccontano la storia e la passione della vera pizza italiana.  
+      Vieni a scoprire le nostre pizze rosse, bianche e gourmet, oppure deliziati con i nostri dolci artigianali e vini selezionati.</p>
+    </div>
+  </section>
 
-      <details>
-        <summary>🥤 Bevande</summary>
-        <div class="menu-content">
-          <p>Bevande fresche, birre artigianali e vini selezionati per te.</p>
-        </div>
-      </details>
-    </section>
-  </main>
+  <section class="categories">
+    <h2>Le Nostre Specialità</h2>
+    <div class="category-grid">
+      <a href="pizze.html" class="category-card red">
+        <h3>🍕 Pizze</h3>
+        <p>Dalle classiche alle gourmet, impasti leggeri e ingredienti di qualità.</p>
+      </a>
+      <a href="dolci.html" class="category-card sweet">
+        <h3>🍰 Dolci</h3>
+        <p>Dolci artigianali e semifreddi per concludere in dolcezza.</p>
+      </a>
+      <a href="bevande.html" class="category-card drink">
+        <h3>🥤 Bevande</h3>
+        <p>Birre artigianali, vini della casa e bevande fresche.</p>
+      </a>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 Pizzeria I Tre Pizzaioli — Tutti i diritti riservati</p>
   </footer>
+
 </body>
 </html>
