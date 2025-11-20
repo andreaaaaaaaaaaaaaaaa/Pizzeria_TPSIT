@@ -1,5 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/* --- IMPORT FONT --- */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Salt:wght@300;400;600&display=swap');
 
+/* --- RESET STILE --- */
 * {
   margin: 0;
   padding: 0;
@@ -7,15 +10,15 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Unbounded', Salt;
   background: linear-gradient(180deg, #fff8f0 0%, #fff1e6 100%);
   color: #333;
   overflow-x: hidden;
 }
 
-/* HEADER */
+/* --- HEADER --- */
 header {
-  background-color: #d62828;
+  background-color: #ffffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,6 +27,7 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  font-family: Salt;
 }
 
 header .logo {
@@ -34,13 +38,13 @@ header .logo {
 
 header .logo img {
   height: 60px;
-  width: 60px;
+  width: 100px;
   object-fit: cover;
   border-radius: 50%;
 }
 
 header h1 {
-  color: white;
+  color: red;
   font-weight: 600;
   font-size: 1.4rem;
 }
@@ -52,19 +56,19 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: red;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 nav a:hover, nav a.active {
-  color: #fcbf49;
+  color: #000000ff;
 }
 
-/* HERO SECTION */
+/* --- HERO SECTION --- */
 .hero {
-  background-image: url('images/hero-pizza.jpg');
+  background-image: url('hero-pizza.jpg');
   background-size: cover;
   background-position: center;
   color: white;
@@ -97,8 +101,8 @@ nav a:hover, nav a.active {
 }
 
 .btn {
-  background: #fcbf49;
-  color: #333;
+  background: #313030ff;
+  color: #000000ff;
   padding: 0.8rem 1.6rem;
   border-radius: 30px;
   text-decoration: none;
@@ -111,7 +115,7 @@ nav a:hover, nav a.active {
   transform: scale(1.05);
 }
 
-/* ABOUT SECTION */
+/* --- ABOUT SECTION --- */
 .about {
   padding: 4rem 2rem;
   background: white;
@@ -133,7 +137,7 @@ nav a:hover, nav a.active {
   animation: fadeUp 1s ease;
 }
 
-/* CATEGORIES */
+/* --- CATEGORIES --- */
 .categories {
   background: #fff1e6;
   padding: 4rem 2rem;
@@ -174,10 +178,10 @@ nav a:hover, nav a.active {
 }
 
 .category-card.red { border-top: 6px solid #e63946; }
-.category-card.sweet { border-top: 6px solid #fcbf49; }
-.category-card.drink { border-top: 6px solid #4ecdc4; }
+.category-card.sweet { border-top: 6px solid #fc49c6ff; }
+.category-card.drink { border-top: 6px solid #564ecdff; }
 
-/* FOOTER */
+/* --- FOOTER --- */
 footer {
   background: #d62828;
   color: white;
@@ -186,68 +190,259 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ANIMATIONS */
+/* --- ANIMATIONS --- */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* MENU PAGE STYLES (pizze, dolci, bevande) */
-.menu-page {
-  padding: 3rem 2rem;
-  background: white;
-  animation: fadeUp 0.8s ease;
-}
-
-.menu-page h2 {
-  color: #d62828;
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-}
-
-.items {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.item {
+/* --- SEZIONI DEL MENU --- */
+.menu-section {
+  padding: 6rem 2rem 5rem;
   background: #fffdf8;
-  border-radius: 15px;
-  padding: 1rem;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  border-bottom: 3px solid #f5e6d3;
 }
 
-.item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+.menu-section:last-of-type {
+  border-bottom: none;
 }
 
-.item img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 0.8rem;
-}
-
-.item h3 {
+.menu-section h2 {
   color: #d62828;
-  margin-bottom: 0.4rem;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-family: Salt;
 }
 
-.item p {
-  font-size: 0.95rem;
-  color: #555;
+/* --- TITOLI SEZIONI --- */
+.menu-category {
+  color: #e63946;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 1rem 0 3rem;
+  display: inline-block;
+}
+
+/* --- GRIGLIE MENU --- */
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- CARD PIZZE --- */
+.pizza-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2.5rem 1rem 1rem;
+  width: 220px; /* dimensione originale */
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2), 
+              0 6px 12px rgba(0, 0, 0, 0.1) inset;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.pizza-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25), 
+              0 8px 18px rgba(0, 0, 0, 0.12) inset;
+  z-index: 10;
+}
+
+/* --- IMMAGINE ROTONDA --- */
+.pizza-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+  border-radius: 50%;
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 8px 12px rgba(0,0,0,0.2));
+  z-index: 4;
+}
+
+.pizza-card:hover img {
+  transform: translateX(-50%) scale(1.1) rotate(-3deg);
+}
+
+/* --- TESTO PIZZA --- */
+.pizza-info {
+  margin-top: 120px;
+  padding-top: 1rem;
+}
+
+.pizza-info h4 {
+  color: #d62828;
+  font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
-.item .price {
+.pizza-info p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.pizza-info .price {
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+/* --- CARD BEVANDE --- */
+.drink-card {
+  background: #fffdf8;
+  border-radius: 20px;
+  padding: 1rem 1rem 1.5rem;
+  width: 220px; /* dimensione originale */
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 
+              0 4px 10px rgba(0, 0, 0, 0.1) inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drink-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 
+              0 6px 15px rgba(0, 0, 0, 0.1) inset;
+}
+
+.drink-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.drink-info {
+  margin-top: 80px;
+}
+
+.drink-info h4 {
+  font-size: 1.05rem;
+  color: #1f618d;
+  margin-bottom: 0.3rem;
+}
+
+.drink-info p {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.drink-info .price {
   font-weight: 600;
   color: #333;
-  display: block;
-  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* --- DIVISIONE SEZIONI --- */
+.menu-section + .menu-section {
+  margin-top: 3rem;
+}
+
+
+
+
+
+
+
+
+/* --- STILE GENERALE BEVANDE --- */
+.menu-section {
+  padding: 3rem 2rem;
+}
+
+.menu-section h2 {
+  text-align: center;
+  color: #d62828;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* --- CARD DELLE BEVANDE --- */
+.drink-card {
+  background: #fffdf8;
+  border-radius: 20px;
+  padding: 1rem 1rem 1.5rem;
+  width: 220px;
+  position: relative;
+  text-align: center;
+  /* Ombra più evidente per far risaltare l'immagine */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 
+              0 4px 10px rgba(0, 0, 0, 0.1) inset;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drink-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 
+              0 6px 15px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* --- IMMAGINE DELLA BEVANDA --- */
+.drink-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* --- INFORMAZIONI DELLA BEVANDA --- */
+.drink-info {
+  margin-top: 80px; /* lascia spazio per l'immagine */
+}
+
+.drink-info h4 {
+  font-size: 1.05rem;
+  color: #1f618d;
+  margin-bottom: 0.3rem;
+}
+
+.drink-info p {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.3rem;
+}
+
+.drink-info .price {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* --- DIVISIONE SEZIONI --- */
+.menu-section + .menu-section {
+  margin-top: 3rem;
 }
